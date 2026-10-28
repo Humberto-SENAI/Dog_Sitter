@@ -1,0 +1,398 @@
+/* Configurações Globais */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    background-color: #ffffff;
+    color: #333333;
+    line-height: 1.6;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Cabeçalho */
+.Cabecalho {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px solid #eee5e5;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.Menu {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.Menu a {
+    text-decoration: none;
+    color: #454747;
+    font-weight: 500;
+}
+
+.botao-destaque {
+    background-color: #6a1b9a;
+    color: #ffffff !important;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+.Header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #ddd;
+}
+.Foto-perfil {
+    width: 80px;          
+    height: 80px;        
+    border-radius: 50%;    
+    object-fit: cover;    
+    object-position: center;
+    
+}
+
+.perfil h1 {
+    font-size: 1.2rem;
+    margin: 0;
+}
+
+.perfil p {
+    font-size: 0.9rem;
+    color: #666;
+    margin: 0;
+}
+
+/* Layout Principal */
+.Fotos-Descricao {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 30px;
+}
+
+@media (max-width: 768px) {
+    .Fotos-Descricao {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Galeria de Fotos */
+.Galeria {
+    grid-column: 1 / -1;
+}
+
+.Fotos { 
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.Foto-Galeria  {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 8px;
+}
+
+/* Cards e Barra Lateral */
+.coluna {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.card {
+    background: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.preco {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.preco span {
+    font-size: 0.9rem;
+    color: #666;
+    font-weight: normal;
+}
+
+.Desconto {
+    background-color: #f3e5f5;
+    color: #6a1b9a;
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+}
+
+/* Botões */
+button {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+    border: none;
+}
+/* ===================================
+   Estilos do Modal de Reserva
+   =================================== */
+
+.painel-reserva-oculto {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.4s ease, opacity 0.3s ease, margin 0.3s ease;
+    margin-top: 0;
+}
+
+.painel-reserva-oculto.ativo {
+    max-height: 500px;
+    opacity: 1;
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px dashed #e0e0e0;
+}
+
+.campo-grupo {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin-bottom: 12px;
+}
+
+.campo-grupo label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #444;
+}
+
+.campo-grupo input, 
+.campo-grupo select {
+    padding: 8px 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-family: inherit;
+}
+
+.opcao-assinante {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 10px 0;
+    font-size: 0.85rem;
+}
+
+.resumo-calculo {
+    background-color: #f9f9f9;
+    padding: 12px;
+    border-radius: 8px;
+    margin: 12px 0;
+    font-size: 0.9rem;
+}
+
+.resumo-calculo.oculto {
+    display: none;
+}
+
+.linha-resumo {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 6px;
+}
+
+.linha-resumo.desconto-texto {
+    color: #2e7d32;
+    font-weight: 500;
+}
+
+.linha-resumo.total {
+    font-size: 1.05rem;
+    color: #6a1b9a;
+    margin-top: 6px;
+}
+
+.btn-confirmar {
+    margin-bottom: 10px;
+}
+
+button.outline {
+    border: 2px solid #6a1b9a;
+    background: transparent;
+    color: #6a1b9a;
+}
+
+button.solid {
+    background-color: #6a1b9a;
+    color: #ffffff;
+}
+
+/* Lista de Detalhes */
+.check-lista {
+    list-style: none;
+    padding: 0;
+    margin-top: 15px;
+}
+
+.check-lista li {
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 10px;
+    font-size: 0.95rem;
+}
+
+.check-lista li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #2e7d32;
+    font-weight: bold;
+}
+/* ===================================
+   Estilos do Chatbot e Botão Fechar
+   =================================== */
+
+/* Container Principal do Chatbot */
+.chatbot-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 340px;
+    height: 450px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    display: flex;
+    flex-direction: column;
+    z-index: 1000;
+    overflow: hidden;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Classe para ocultar a janela */
+.chatbot-hidden {
+    display: none !important;
+}
+
+/* Cabeçalho do Chatbot */
+.chatbot-header {
+    background-color: #6a1b9a;
+    color: #ffffff;
+    padding: 12px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+}
+
+/* Botão de Fechar (X) */
+.chatbot-close-btn {
+    background: transparent;
+    border: none;
+    color: #ffffff;
+    font-size: 22px;
+    font-weight: bold;
+    cursor: pointer;
+    line-height: 1;
+    padding: 0 4px;
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
+}
+
+.chatbot-close-btn:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Botão Flutuante (Launcher) quando fechado */
+.chatbot-launcher {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #6a1b9a;
+    color: #ffffff;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 25px;
+    font-weight: bold;
+    font-size: 14px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.chatbot-launcher:hover {
+    background-color: #52137d;
+}
+
+/* Área de Mensagens */
+.chatbot-messages {
+    flex: 1;
+    padding: 15px;
+    overflow-y: auto;
+    background-color: #f9f9f9;
+}
+
+.bot-message {
+    background-color: #e9d8f4;
+    color: #333;
+    padding: 8px 12px;
+    border-radius: 12px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    max-width: 85%;
+}
+
+/* Campo de Entrada */
+.chatbot-input-area {
+    display: flex;
+    padding: 10px;
+    border-top: 1px solid #e0e0e0;
+    gap: 8px;
+}
+
+.chatbot-input-area input {
+    flex: 1;
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.chatbot-input-area button {
+    width: auto;
+    margin-top: 0;
+    padding: 8px 14px;
+    background-color: #6a1b9a;
+    color: #ffffff;
+}

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paloma - Hospedagem</title>
+    <!-- Importação de Fonte -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+    <!-- Folha de estilo externa -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="Cabecalho">
+        <img src="Paloma.jpg" alt="Hospedagem" class="logo" width="250">
+        <nav class="Menu">
+            <a href="#sobre">Sobre</a>
+            <a href="#Preços">Preços</a>
+            <a href="#Contato" class="botao-destaque">Fale com a Paloma</a>
+        </nav>
+        <div class="Header">
+            <div class="avatar">
+                <img src="MileyCyrus.jpg" alt="Foto de perfil" class="Foto-perfil">
+            </div>
+            <div class="perfil">
+                <h1> Paloma</h1>
+                <p> Bosque, Campinas - SP</p>
+                <p>⭐ 5 (616 avaliações)</p>
+            </div>
+        </div>
+
+    </header>
+
+    <!-- Conteúdo principal com a barra lateral integrada dentro da grid --> 
+    <main class="Fotos-Descricao"> 
+        <div class="conteudo-principal"> 
+            
+            <section class="Galeria"> 
+                <div class="Fotos"> 
+                    <div class="Foto-Galeria">
+                        <img src="salsicha.jpg" alt="Salsicha">
+                    </div> 
+                    <div class="Foto-Galeria"></div> 
+                    <div class="Foto-Galeria"></div> 
+                </div> 
+            </section> 
+
+            <section id="sobre"> 
+                <h2 class="Titulo">Sobre Paloma</h2> 
+                <p style="font-size: 15px; line-height: 1.5;"> 
+                    Tenho 43 anos de idade e sempre gostei muito de animais. Já tive diversos cães SRD e de raça. No momento tenho 2 cães Anita e a Chantilly que amam companhia e curtem brincar com outros dogs. Recebemos seu amigo em nossa casa com muito amor e dedicação. Local seguro e com supervisão 24horas. Aqui seu amigo nunca ficará sozinho. Seu cãozinho pode ficar dentro de casa e tem também um quintal espaçoso e seguro para correr e brincar muito. Realizamos atividades de recreação entre todos. Dormem todos dentro de casa juntamente com nós humanos. 
+                </p> 
+                <a href="#" style="color:rgb(69, 71, 71); font-weight: bold; text-decoration: none; font-size: 15px;">Ver mais</a> 
+            </section> 
+
+            <hr style="border: none; border-top: 2px solid #ddd; margin: 30px 0;"> 
+
+            <section> 
+                <h2 class="secao">Sobre o local</h2> 
+                <p>Domicílio é casa</p> 
+                <p>Tem quintal médio</p> 
+                <p>Janelas com tela de proteção</p> 
+                <p>Pets podem subir no sofá</p> 
+                <p>Pets podem subir na cama</p> 
+                <p>Supervisão 24h</p> 
+            </section> 
+        </div> 
+
+<aside class="coluna"> 
+    <div class="card" id="card-hospedagem"> 
+        <h3>Hospedagem</h3> 
+        <div class="preco">R$85,00 <span>/noite</span></div> 
+        
+        <div class="Desconto"> 
+            ℹ️ Assinantes têm 20% de desconto. 
+        </div> 
+
+        <p style="font-size: 14px; color: #666; margin-bottom: 15px;"> 
+            Política de cancelamento: <a href="#" style="color: #6a1b9a;">Cancelamento Moderado</a> 
+        </p> 
+
+        <!-- Botão Principal que abre/fecha o menu de reserva -->
+        <button id="btn-toggle-reserva" class="outline">Reservar</button> 
+
+        <!-- Menu/Formulário de Reserva Expansível -->
+        <div id="painel-reserva" class="painel-reserva-oculto">
+            <form id="form-calculo-reserva">
+                <div class="campo-grupo">
+                    <label for="checkin">Check-in:</label>
+                    <input type="date" id="checkin" required>
+                </div>
+                
+                <div class="campo-grupo">
+                    <label for="checkout">Check-out:</label>
+                    <input type="date" id="checkout" required>
+                </div>
+
+                <div class="campo-grupo">
+                    <label for="qtd-pets">Quantidade de Pets:</label>
+                    <select id="qtd-pets">
+                        <option value="1">1 Pet</option>
+                        <option value="2">2 Pets</option>
+                        <option value="3">3 ou mais</option>
+                    </select>
+                </div>
+
+                <div class="opcao-assinante">
+                    <input type="checkbox" id="sou-assinante">
+                    <label for="sou-assinante">Sou assinante (20% OFF)</label>
+                </div>
+
+                <!-- Detalhamento de Valores (Calculado dinamicamente via JS) -->
+                <div id="resumo-calculo" class="resumo-calculo oculto">
+                    <div class="linha-resumo">
+                        <span id="label-diarias">R$ 85,00 x 0 noites</span>
+                        <span id="valor-subtotal">R$ 0,00</span>
+                    </div>
+                    <div class="linha-resumo desconto-texto oculto" id="linha-desconto">
+                        <span>Desconto Assinante (20%)</span>
+                        <span id="valor-desconto">- R$ 0,00</span>
+                    </div>
+                    <hr>
+                    <div class="linha-resumo total">
+                        <strong>Total:</strong>
+                        <strong id="valor-total">R$ 0,00</strong>
+                    </div>
+                </div>
+
+                <button type="submit" class="solid btn-confirmar">Confirmar Reserva</button>
+            </form>
+        </div>
+
+        <button class="solid">Iniciar conversa</button> 
+    </div>
+</aside>
+    </main>
+
+</body>
+</html>
+
+    <!-- INVOCAR O CHATBOT A PARTIR DE OUTRO FICHEIRO (Passo 2 do esquema) -->
+    <script src="chatbot.js"></script>
+    <script>
+        // Inicializa o chatbot apontando para a base de dados em JSON
+        initChatbot({
+            jsonUrl: 'minha-base-dados.json'
+        });
+    </script>
+</body>
+</html>
